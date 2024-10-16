@@ -1,0 +1,17 @@
+name: My github workflow
+on: 
+  push:
+    branches: 
+      -main
+env:
+  PROJECT_NAME: githubactions-demo
+  COURSE: LLMOps
+jobs:
+  myexamplejob:
+    runs-on: ubuntu-latest
+    steps: 
+      - run: echo "checkout the repo"
+      - name: checkout repo
+        uses: actions/checkout@v4
+      -run: printenv
+      -run: echo "this is the env ${{env.PROJECT_NAME}} and ${{env.COURSE}}"
